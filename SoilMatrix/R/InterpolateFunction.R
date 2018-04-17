@@ -14,7 +14,9 @@
 #}
 
 #'Data interpolation across soil depths
-#'@param Dataset a dataframe of observed soil data
+#'
+#'Interpolate is a function that takes a dataframe with a limited number of observations and performs linear interpolation between the datapoints to generate an expanded dataset.The function takes a dataframe of observations and returns a dataframe containing all extrapolated values.
+#'@param Dataset a dataframe of environmental observations
 #'@param interCol the column over which the approx function embedded in interpolate() performs interpolation.
 #'@param datRange The range of points to which the interCol column will be expanded.
 #'@return A dataframe of depth-interpolated values

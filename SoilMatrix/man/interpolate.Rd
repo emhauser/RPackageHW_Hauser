@@ -7,7 +7,7 @@
 interpolate(Dataset, interCol, datRange)
 }
 \arguments{
-\item{Dataset}{a dataframe of observed soil data}
+\item{Dataset}{a dataframe of environmental observations}
 
 \item{interCol}{the column over which the approx function embedded in interpolate() performs interpolation.}
 
@@ -17,8 +17,8 @@ interpolate(Dataset, interCol, datRange)
 A dataframe of depth-interpolated values
 }
 \description{
-Data interpolation across soil depths
+Interpolate is a function that takes a dataframe with a limited number of observations and performs linear interpolation between the datapoints to generate an expanded dataset.The function takes a dataframe of observations and returns a dataframe containing all extrapolated values.
 }
 \examples{
-interpolate(InterP2, 19, 1:193)
+interpolate(CO2, 4, 95:1000)
 }
