@@ -1,7 +1,7 @@
 #' SoilMatrix: A package to organize functions needed for soil biogeochemical analyses.
 #
 #' SoilMatrix contains functions:
-#' interpolate
+#' interpolate(), SoilCorMat(), SoilRainbowStats()
 #'
 #' @section SoilMatrix functions:
 #' functions ...

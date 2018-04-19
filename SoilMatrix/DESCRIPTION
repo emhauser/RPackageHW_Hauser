@@ -9,4 +9,5 @@ License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Imports:dplyr, tidyr, ggplot2, Hmisc, corrplot
+Imports:dplyr, tidyr, ggplot2, Hmisc, corrplot, colorspace
+
