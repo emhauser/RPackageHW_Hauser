@@ -8,7 +8,7 @@ output: html_document
 ##Install package
 
 ```{r InstallSoilMatrixPackage, echo=T}
-install.packages("SoilMatrix2")
+devtools::install_github("emhauser/RPackageHW_Hauser/SoilMatrix2/") #This part must be run in the console for the .Rmd to be knit. 
 library(SoilMatrix2)
 ```
 
@@ -33,7 +33,7 @@ if(nrow(test) == expectedrows)
 ###Test that the SoilCorMat() function produces the correct correlation coefficients 
 
 ```{r SoilCorMat_test, echo=T}
-#Since interpolate() requires a dataset, I will perform unit tests using built in R datasets--CO2 and airquality
+#Since SoilCorMat() requires a dataset, I will perform unit tests using built in R datasets--CO2 and airquality
 testCor <- SoilCorMat(CO2, startCol = 4, endCol = 5)
 functTestCor <- round(testCor$r[1,2])
 actCor <- round(cor(CO2$conc, CO2$uptake))
@@ -51,7 +51,7 @@ if(functTestCor == actCor)
 ###Test that SoilRainbowStats produces correct color spectrum length
 
 ```{r PlotTest, echo=T}
-#Since interpolate() requires a dataset, I will perform unit tests using built in R datasets--CO2 and airquality
+#Since SoilRainbowStats() requires a dataset, I will perform unit tests using built in R datasets--CO2 and airquality
 #This unit test takes a chunk of code from within the plotting function and determines whether is computes the correct number of colors for the desired color spectrum of the dataset. 
 anticipatedNumColors<- nrow(airquality)
 calculatedNumColors <-length(rev(colorspace::rainbow_hcl(nrow(airquality))))
