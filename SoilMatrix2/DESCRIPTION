@@ -4,7 +4,7 @@ Title: Soil and rhizosphere biogeochemical analyses
 Version: 0.1.0
 Author: Emma Hauser
 Maintainer: Emma Hauser <emhauser@ku.edu>
-Description: This is a package that provides functions for analysis of soil data that is unevenly spatially distributed in a soil profile.The package includes a function for linear interpolation of datapoints between sample observations, correlation between extrapolated datasets, and plotting correlation matrices. It permits the user to explore the realtionships between depth distributions of soil biogeochemical profiles. It may be useful for root biomass, soil carbon, and soil mineralogical analyses.
+Description: This is a package that provides functions for analysis of soil data that is unevenly spatially distributed in a soil profile. The package includes a function for linear interpolation of datapoints between sample observations, correlation between extrapolated datasets, and plotting correlation matrices. It permits the user to explore the relationships between depth distributions of soil biogeochemical profiles. It may be useful for root biomass, soil carbon, and soil mineralogical analyses.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
