@@ -19,23 +19,20 @@
 
 #'Color-coded scatter plots of soil dataset correlations
 #'
-#'\code{SoilRainbowStats()} is a function that takes a dataframe of soil observations and analyzes the correlations between each column of variables. It then plots the correlation scatter plots with regression coefficients, and color codes plotted points in rainbow order according to soil depth. Shallower points are red and deeper points are violet.
+#'\code{SoilRainbowStats()} is a function that takes a dataframe of soil observations and analyzes the correlations between each column of variables. It then plots the correlation scatter plots with regression coefficients and color codes plotted points in rainbow order according to soil depth. Shallower points are red and deeper points are violet.
 #'@param SoilDatSet  A dataframe containing columns of numeric variables measured in soil samples
 #'@param depthCol The column number in the dataframe for the column containing soil depth data.
 #'@param numDepths The number of depths in/length of the soil depth column
 #'@param startCol The column for which the user would like to start producing correlations. If the user wants to correlate all variables in the dataframe to each other, this value equals 1.
 #'@param endCol  The column for which the user would like to stop calculating correlations between variables. If the user wishes to correlate all variables, this number equals ncol(SoilDatSet)
-#'@section  Note: this function requires the colorspace package
+#'@section  Note: This function requires the colorspace package
 #'@return A matrix of scatter plots with corresponding correlation coefficients. Scattered points are color coordinated such that a rainbow-ordered plot indicates depth-dependence of the relationship. Lack of color order indicates no effect of depth on the relationship between 2 variables.
 #'@examples SoilRainbowStats(airquality, 6, 153, 1, 3 )
-
 SoilRainbowStats <- function(SoilDatSet, depthCol, numDepths, startCol, endCol){
-
 #Make color vector
 SoilDat2 <- SoilDatSet[,-depthCol]
 species_labels <- SoilDatSet[,depthCol]
-depth_col <- rev(rainbow_hcl(numDepths))
-
+depth_col <- rev(colorspace::rainbow_hcl(numDepths))
 #Combine color vector and correlation coefficients
 upper.panel<-function(x, y){
   points(x,y, pch=19, col=depth_col, cex = 0.5)
@@ -45,7 +42,6 @@ upper.panel<-function(x, y){
   par(usr = c(0, 1, 0, 1))
   text(0.5, 0.9, txt)
 }
-
 #Make plots of correlation matrices including r values
 pairs(SoilDatSet[,startCol:endCol], lower.panel = NULL,
       upper.panel = upper.panel)
@@ -55,5 +51,4 @@ pairs(SoilDatSet[,startCol:endCol], lower.panel = NULL,
 
 #SoilRainbowStats(HWSoilDat, 1, 175, 4, 8)
 #SoilRainbowStats(PineSoilDat, 1, 175, 16, 19)
-#SoilRainbowStats(airquality, 6, 153, 1, 3 )
-
+#SoilRainbowStats(airquality, 6, 153, 1, 4)

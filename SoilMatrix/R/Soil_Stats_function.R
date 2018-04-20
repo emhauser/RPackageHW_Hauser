@@ -14,6 +14,7 @@
 #'@return A correlation matrix of calculated r and p values.
 #'@examples SoilCorMat(CO2, startCol = 4, endCol = 5)
 SoilCorMat <- function(SoilDat, startCol, endCol){
-  SoilDat <-rcorr(as.matrix(SoilDat[,startCol:endCol]))
+  SoilDat <-Hmisc::rcorr(as.matrix(SoilDat[,startCol:endCol]))
   return(SoilDat)
 }
+
