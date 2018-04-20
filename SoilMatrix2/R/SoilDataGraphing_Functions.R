@@ -51,4 +51,4 @@ pairs(SoilDatSet[,startCol:endCol], lower.panel = NULL,
 
 #SoilRainbowStats(HWSoilDat, 1, 175, 4, 8)
 #SoilRainbowStats(PineSoilDat, 1, 175, 16, 19)
-testPlots <- SoilRainbowStats(airquality, 6, 153, 1, 3 )
+#testPlots <- SoilRainbowStats(airquality, 6, 153, 1, 3 )
